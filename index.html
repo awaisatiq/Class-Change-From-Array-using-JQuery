@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Changing Classes</title>
+    <style>
+        #c-nav-next{
+            /* color: white;
+            background-color: black;
+            padding: 10px 30px;
+            border: 0px;
+            border-radius: 5px;
+            width: 60px; */
+        }
+        .class-1 {
+            color:blue;
+        }
+        .class-2 {
+            color: red;
+        }
+        .class-3 {
+            color: green;
+        }
+        .class-4 {
+            color: indigo;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <button id="c-nav-next">Click Me</button>
+    <p id="changeMe" class="class-1" data="1">I Am The TEXT with changing class</p>
+    <script>
+        var classes = ["class-1","class-2","class-3","class-4"];
+        $( "#c-nav-next" ).on( "click", function() {
+            var elem = "#changeMe";
+            var data = parseInt($( elem ).attr( "data" )) + 1;
+            console.log(classes.length);
+            if(data >= classes.length){
+                data = 1;
+            }
+            $( elem ).attr( "data" , data);
+            $( elem ).attr( "class" , classes[data-1]);
+        });
+    </script>
+</body>
+</html>
